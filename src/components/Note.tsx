@@ -24,7 +24,7 @@ const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundCol
       className={`note ${pinned ? 'pinned' : ''}`}
       style={{ backgroundColor }}
     >
-      {imageUrl && <img src={imageUrl} alt="Note" style={{ maxHeight: '200px', objectFit: 'cover' }} />}
+      {imageUrl && <img src={imageUrl} width="100%" height="50%" alt="Note" style={{ maxHeight: '200px', objectFit: 'cover' }} />}
       {title && <h3>{title}</h3>}
       
       <p className='scroll'>

@@ -5,11 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import ColorIcon from '../images/image.png';
 
+
 const NoteForm: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState<File | null>(null);
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+  const [backgroundColor, setBackgroundColor] = useState('#000000');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false); // New state for loading indicator
 
@@ -65,12 +66,12 @@ const NoteForm: React.FC = () => {
     setTitle('');
     setContent('');
     setImage(null);
-    setBackgroundColor('#ffffff');
+    setBackgroundColor('#000000');
     setIsSubmitted(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form  onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Title (Optional)"
