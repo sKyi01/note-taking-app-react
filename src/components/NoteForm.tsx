@@ -71,7 +71,7 @@ const NoteForm: React.FC = () => {
   };
 
   return (
-    <form  onSubmit={handleSubmit}>
+    <form style={{backgroundColor:"black"}} onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Title (Optional)"
