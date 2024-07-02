@@ -3,16 +3,21 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f7f9fc;
+  background-image: url('./images/ikagai.jpg'); /* Update the path to your image */
+  background-size: cover; /* Ensures the background image covers the entire viewport */
+   /* Centers the background image */
+  background-repeat: no-repeat; /* Ensures the background image does not repeat */
 }
 
 .App {
   padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: rgba(197, 228, 248, 0.8); /* Semi-transparent background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+
 
 h1 {
   text-align: center;
@@ -87,10 +92,11 @@ button:disabled {
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  height: 200px; /* Fixed height */
-  display: flex;
+  height: 300px; /* Fixed height */
+ 
   flex-direction: column;
-  justify-content: space-between;}
+  justify-content: space-between;
+  }
 
 
 .note img {
@@ -198,4 +204,8 @@ button:disabled {
   color: blue;
   cursor: pointer;
   margin-left: 5px;
+}
+
+.scroll {
+  overflow-y: scroll;
 }

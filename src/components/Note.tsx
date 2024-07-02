@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteNote, pinNote } from '../features/notes/notesSlice';
 
@@ -13,15 +13,34 @@ interface NoteProps {
 
 const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundColor, pinned }) => {
   const dispatch = useDispatch();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleContent = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <div
       className={`note ${pinned ? 'pinned' : ''}`}
       style={{ backgroundColor }}
     >
+      {imageUrl && <img src={imageUrl} alt="Note" style={{ maxHeight: '200px', objectFit: 'cover' }} />}
       {title && <h3>{title}</h3>}
-      <p>{content}</p>
-      {imageUrl && <img src={imageUrl} alt="Note" style={{ maxHeight: '100px', objectFit: 'cover' }} />}
+      
+      <p className='scroll'>
+        {isExpanded ? content : `${content.substring(0, 100)}...`}
+        {content.length > 100 && (
+          <span
+            className="see-more"
+            onClick={toggleContent}
+            style={{ color: 'blue', cursor: 'pointer', marginLeft: '5px' }}
+          >
+            {isExpanded ? ' See less' : ' See more'}
+          </span>
+        )}
+      </p>
+
+     
       
       <button
         className="pin-button"
@@ -35,6 +54,7 @@ const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundCol
       >
         Delete
       </button>
+      
     </div>
   );
 };
