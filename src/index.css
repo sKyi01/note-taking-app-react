@@ -1,13 +1,201 @@
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #f7f9fc;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+textarea.invalid {
+  border-color: #dc3545;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.note-list {
+  display: flex;
+ 
+  flex-wrap: wrap;
+  gap: 55px;
+
+}
+
+.note {
+  position: relative;
+  flex: 1 1 calc(25% - 16px); /* Four columns */
+  max-width: calc(20% - 16px);
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 200px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;}
+
+
+.note img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note.pinned {
+  background-color: #ffe599;
+}
+
+.note h3 {
+  margin: 0 0 8px;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note p {
+  margin: 0 0 16px;
+  color: #555555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.note button {
+  position: absolute;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.note .pin-button {
+  bottom: 8px;
+  right: 8px;
+  background-color: #28a745;
+  color: white;
+}
+
+.note .pin-button:hover {
+  background-color: #218838;
+}
+
+.note .delete-button {
+  bottom: 8px;
+  left: 8px;
+  background-color: #dc3545;
+  color: white;
+}
+
+.note .delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .note {
+    flex: 1 1 calc(33.333% - 16px); /* Three columns on medium screens */
+    max-width: calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 900px) {
+  .note {
+    flex: 1 1 calc(50% - 16px); /* Two columns on small screens */
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .note {
+    flex: 1 1 100%; /* One column on extra small screens */
+    max-width: 100%;
+  }
+}
+
+.loader {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #007bff;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.note p span {
+  color: blue;
+  cursor: pointer;
+  margin-left: 5px;
 }
