@@ -13,11 +13,6 @@ interface NoteProps {
 
 const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundColor, pinned }) => {
   const dispatch = useDispatch();
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleContent = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   return (
     <div
@@ -27,20 +22,12 @@ const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundCol
       {imageUrl && <img src={imageUrl} width="100%" height="50%" alt="Note" style={{ maxHeight: '200px', objectFit: 'cover' }} />}
       {title && <h3>{title}</h3>}
       
-      <p className='scroll'>
-        {isExpanded ? content : `${content.substring(0, 100)}...`}
-        {content.length > 100 && (
-          <span
-            className="see-more"
-            onClick={toggleContent}
-            style={{ color: 'blue', cursor: 'pointer', marginLeft: '5px' }}
-          >
-            {isExpanded ? ' See less' : ' See more'}
-          </span>
-        )}
-      </p>
-
-     
+      <div
+        className="content-container"
+        style={{ maxHeight: '100px', overflowY: 'auto', whiteSpace: 'pre-wrap' }}
+      >
+        {content}
+      </div>
       
       <button
         className="pin-button"
@@ -54,7 +41,6 @@ const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundCol
       >
         Delete
       </button>
-      
     </div>
   );
 };
