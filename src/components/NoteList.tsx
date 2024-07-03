@@ -5,7 +5,7 @@ import { deleteNote, pinNote, Note as NoteType } from '../features/notes/notesSl
 import Note from './Note';
 
 const NoteList: React.FC = () => {
-  const notes = useSelector((state: RootState) => state.notes.notes); // Accessing notes array from the state
+  const notes = useSelector((state: RootState) => state.notes.notes); 
   const dispatch = useDispatch();
 
   const [expandedNotes, setExpandedNotes] = useState<{ [key: string]: boolean }>({});

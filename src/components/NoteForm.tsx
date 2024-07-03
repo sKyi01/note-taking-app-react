@@ -12,7 +12,7 @@ const NoteForm: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [backgroundColor, setBackgroundColor] = useState('#000000');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false); // New state for loading indicator
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -22,14 +22,14 @@ const NoteForm: React.FC = () => {
       formData.append('file', image);
       formData.append('upload_preset', "message_app");
 
-      setLoading(true); // Start loading indicator before image upload
+      setLoading(true); 
 
       try {
         const response = await axios.post(`https://api.cloudinary.com/v1_1/dltvvglvf/image/upload`, formData);
-        setLoading(false); // Stop loading indicator after successful upload
+        setLoading(false); 
         return response.data.secure_url;
       } catch (error) {
-        setLoading(false); // Stop loading indicator on error
+        setLoading(false); 
         console.error('Error uploading image:', error);
         return '';
       }
@@ -47,7 +47,7 @@ const NoteForm: React.FC = () => {
       return;
     }
 
-    setLoading(true); // Start loading indicator before form submission
+    setLoading(true); 
 
     const imageUrl = await handleImageUpload();
 
@@ -62,7 +62,7 @@ const NoteForm: React.FC = () => {
       })
     );
 
-    setLoading(false); // Stop loading indicator after note is added
+    setLoading(false); 
     setTitle('');
     setContent('');
     setImage(null);
