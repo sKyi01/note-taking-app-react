@@ -75,6 +75,7 @@ const NoteForm: React.FC = () => {
       <input
         type="text"
         placeholder="Title (Optional)"
+        maxLength={40}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

@@ -114,9 +114,8 @@ button:disabled {
 .note h3 {
   margin: 0 0 8px;
   color: #ffffff; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-wrap: break-word;
+  
 }
 
 .note p {
