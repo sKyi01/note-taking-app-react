@@ -24,7 +24,7 @@ const Note: React.FC<NoteProps> = ({ id, title, content, imageUrl, backgroundCol
       
       <div
         className="content-container"
-        style={{ maxHeight: '100px', overflowY: 'auto', whiteSpace: 'pre-wrap' }}
+        style={{ maxHeight: '100px', overflowY: 'auto', whiteSpace: 'pre-wrap', fontSize:"14px" }}
       >
         {content}
       </div>
