@@ -6,10 +6,6 @@ Live URL : https://note-taking-app-react-ebon.vercel.app/
 
 Welcome to the Notes Application! This application allows users to create, manage, and organize notes efficiently. Each note can have a title, content, background color, and an optional image. Users can also pin important notes for quick access.
 
-![Project Screenshot](https://example.com/path/to/your/screenshot.png)
-
-![Project Screenshot](https://github.com/sKyi01/note-taking-app-react/notetakingapp.png](https://drive.google.com/file/d/1A3ZYNi3COC5VcmjZ7EFvE7gXxON83ctf/view?usp=sharing)
-
 
 ## Features
 
