@@ -8,7 +8,7 @@ Welcome to the Notes Application! This application allows users to create, manag
 
 ![Project Screenshot](https://example.com/path/to/your/screenshot.png)
 
-![Project Screenshot](https://github.com/sKyi01/note-taking-app-react/notetakingapp.png)
+![Project Screenshot](https://github.com/sKyi01/note-taking-app-react/notetakingapp.png](https://drive.google.com/file/d/1A3ZYNi3COC5VcmjZ7EFvE7gXxON83ctf/view?usp=sharing)
 
 
 ## Features
